@@ -17,7 +17,8 @@ def run_game(sequence, limit=100):
             first_indices[tuple(current)] = step
         else:
             res = monster[first_indices[tuple(current)]:]
-            print("\nNever ending\n")
+            print("\nNever ending")
+            print(len(res)-1, "steps in the cycle")
             for n in res:
                 print(n)
             return step, res
@@ -28,6 +29,7 @@ def run_game(sequence, limit=100):
 
 if __name__ == '__main__':
     # Change this sequence to whatever you want
-    sequence = [1,1,1,1,1,2]
+    sequence = [1,1,1,1,1,1,0,0,0,0,0,0]
     step_limit = 1000
     res = run_game(sequence, step_limit)
+    print(res[0], "steps until this repeat")
